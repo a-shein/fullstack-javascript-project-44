@@ -13,6 +13,8 @@ function setCondition(gameName) {
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
   } else if (gameName === 'brain-calc') {
     console.log('What is the result of the expression?');
+  } else if (gameName === 'brain-nod') {
+      console.log('Find the greatest common divisor of given numbers.');
   }
 }
 
@@ -27,11 +29,18 @@ function generateOperator() {
 }
 
 function askQuestion(number, gameName, secondNumber = null, operator = null) {
-  if (gameName === 'brain-even') {
+    let question = '';
+    if (gameName === 'brain-even') {
     console.log(`Question: ${number}`);
+    question = `Question: ${number}`;
+    return question;
   } else if (gameName === 'brain-calc') {
-    console.log(`${number} ${operator} ${secondNumber}`);
+    console.log(`Question: ${number} ${operator} ${secondNumber}`);
+    question = `Question: ${number} ${operator} ${secondNumber}`;
+    return question;
   }
+
+  return false;
 }
 
 function setAnswer() {
@@ -84,8 +93,10 @@ function congratulationToUser(userName) {
   console.log(`Congratulations, ${userName}!`);
 }
 
-function incorrectResultMessage(correctAnswer, answer, userName) {
-  console.log(
+function incorrectResultMessage(correctAnswer, answer, userName, question) {
+    console.log(question);
+    console.log(`Your answer: ${answer}`);
+    console.log(
     `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n Let's try again, ${userName}!`,
   );
 }
@@ -97,6 +108,7 @@ function negativeAnswerToUser(
   gameName,
   secondNumber = null,
   operator = null,
+  question = null,
 ) {
   let correctAnswer = '';
   if (gameName === 'brain-even') {
@@ -116,7 +128,7 @@ function negativeAnswerToUser(
     incorrectResultMessage(correctAnswer, answer, userName);
   } else if (gameName === 'brain-calc') {
     correctAnswer = calculate(number, secondNumber, operator);
-    incorrectResultMessage(correctAnswer, answer, userName);
+    incorrectResultMessage(correctAnswer, answer, userName, question);
   }
 }
 
@@ -129,7 +141,6 @@ function game(gameName) {
     while (counter < 3) {
       let result = null;
       const number = generateNumber();
-      askQuestion(number, gameName);
       const answer = setAnswer();
       result = checkAnswer(answer, number, gameName);
 
@@ -146,7 +157,7 @@ function game(gameName) {
       const number = generateNumber();
       const secondNumber = generateNumber();
       const operator = generateOperator();
-      askQuestion(number, gameName, secondNumber, operator);
+      const question = askQuestion(number, gameName, secondNumber, operator);
       const answer = setAnswer();
       result = checkAnswer(answer, number, gameName, secondNumber, operator);
 
@@ -154,7 +165,7 @@ function game(gameName) {
         correctResultMessage();
         counter += 1;
       } else {
-        return negativeAnswerToUser(answer, userName, number, gameName, secondNumber, operator);
+        return negativeAnswerToUser(answer, userName, number, gameName, secondNumber, operator, question);
       }
     }
   }
