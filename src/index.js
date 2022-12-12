@@ -14,7 +14,7 @@ function setCondition(gameName) {
   } else if (gameName === 'brain-calc') {
     console.log('What is the result of the expression?');
   } else if (gameName === 'brain-nod') {
-      console.log('Find the greatest common divisor of given numbers.');
+    console.log('Find the greatest common divisor of given numbers.');
   }
 }
 
@@ -29,12 +29,12 @@ function generateOperator() {
 }
 
 function askQuestion(number, gameName, secondNumber = null, operator = null) {
-    let question = '';
-    if (gameName === 'brain-even') {
+  let question = '';
+  if (gameName === 'brain-even') {
     console.log(`Question: ${number}`);
     question = `Question: ${number}`;
     return question;
-  } else if (gameName === 'brain-calc') {
+  } if (gameName === 'brain-calc') {
     console.log(`Question: ${number} ${operator} ${secondNumber}`);
     question = `Question: ${number} ${operator} ${secondNumber}`;
     return question;
@@ -94,9 +94,9 @@ function congratulationToUser(userName) {
 }
 
 function incorrectResultMessage(correctAnswer, answer, userName, question) {
-    console.log(question);
-    console.log(`Your answer: ${answer}`);
-    console.log(
+  console.log(question);
+  console.log(`Your answer: ${answer}`);
+  console.log(
     `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n Let's try again, ${userName}!`,
   );
 }
@@ -165,7 +165,15 @@ function game(gameName) {
         correctResultMessage();
         counter += 1;
       } else {
-        return negativeAnswerToUser(answer, userName, number, gameName, secondNumber, operator, question);
+        return negativeAnswerToUser(
+          answer,
+          userName,
+          number,
+          gameName,
+          secondNumber,
+          operator,
+          question,
+        );
       }
     }
   }
