@@ -1,11 +1,11 @@
 import {
   congratulationToUser,
   correctResultMessage,
-  generateNumber,
   greetings,
   incorrectResultMessage,
   setAnswer,
   setCondition,
+  generateTool,
   gameCounter,
 } from '../index.js';
 
@@ -46,36 +46,27 @@ function checkAnswer(answer, number, secondNumber, operator) {
   return Number(answer) === result;
 }
 
-function negativeAnswerToUser(answer, userName, number, secondNumber, operator, question) {
-  const correctAnswer = calculate(number, secondNumber, operator);
-  incorrectResultMessage(correctAnswer, answer, userName, question);
-}
-
 function selectRightResultOfExpressionGame() {
   const gameName = 'brain-calc';
+  const minNumber = 1;
+  const maxNumber = 20;
   const userName = greetings();
   setCondition(gameName);
 
   let counter = 0;
   while (counter < gameCounter) {
-    const number = generateNumber();
-    const secondNumber = generateNumber();
+    const number = generateTool(minNumber, maxNumber);
+    const secondNumber = generateTool(minNumber, maxNumber);
     const operator = generateOperator();
     const question = askQuestion(number, secondNumber, operator);
     const answer = setAnswer();
+    const correctAnswer = calculate(number, secondNumber, operator);
 
     if (checkAnswer(answer, number, secondNumber, operator)) {
       correctResultMessage();
       counter += 1;
     } else {
-      return negativeAnswerToUser(
-        answer,
-        userName,
-        number,
-        secondNumber,
-        operator,
-        question,
-      );
+      return incorrectResultMessage(correctAnswer, answer, userName, question);
     }
   }
 

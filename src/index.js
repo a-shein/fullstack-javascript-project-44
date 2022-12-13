@@ -9,17 +9,21 @@ function greetings() {
 }
 
 function setCondition(gameName) {
-  if (gameName === 'brain-even') {
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  } else if (gameName === 'brain-calc') {
-    console.log('What is the result of the expression?');
-  } else if (gameName === 'brain-nod') {
-    console.log('Find the greatest common divisor of given numbers.');
+  switch (gameName) {
+    case 'brain-even':
+      console.log('Answer "yes" if the number is even, otherwise answer "no".');
+      break;
+    case 'brain-calc':
+      console.log('What is the result of the expression?');
+      break;
+    case 'brain-nod':
+      console.log('Find the greatest common divisor of given numbers.');
+      break;
+    case 'brain-progression':
+      console.log('What number is missing in the progression?');
+      break;
+    default:
   }
-}
-
-function generateNumber() {
-  return Math.floor(Math.random() * 100);
 }
 
 function setAnswer() {
@@ -42,15 +46,19 @@ function incorrectResultMessage(correctAnswer, answer, userName, question) {
   );
 }
 
+function generateTool(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 const gameCounter = 3;
 
 export {
   greetings,
   setCondition,
-  generateNumber,
   setAnswer,
   correctResultMessage,
   incorrectResultMessage,
   congratulationToUser,
+  generateTool,
   gameCounter,
 };

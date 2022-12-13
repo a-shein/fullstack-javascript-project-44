@@ -1,11 +1,11 @@
 import {
   correctResultMessage,
-  generateNumber,
   greetings,
   incorrectResultMessage,
   setAnswer,
   setCondition,
   congratulationToUser,
+  generateTool,
   gameCounter,
 } from '../index.js';
 
@@ -24,40 +24,32 @@ function checkAnswer(answer, number) {
         || (answer === 'no' && !parityNumber(number));
 }
 
-function negativeAnswerToUser(answer, userName, number, question) {
-  let correctAnswer;
-  const yes = 'yes';
-  const no = 'no';
-  switch (answer) {
-    case yes:
-      correctAnswer = no;
-      break;
-    case no:
-      correctAnswer = yes;
-      break;
-    default:
-      correctAnswer = parityNumber(number) ? yes : no;
+function getCorrectAnswer(number) {
+  if (parityNumber(number)) {
+    return 'yes';
   }
-
-  incorrectResultMessage(correctAnswer, answer, userName, question);
+  return 'no';
 }
 
 function selectEvenNumberGame() {
   const gameName = 'brain-even';
+  const min = 1;
+  const max = 20;
   const userName = greetings();
   setCondition(gameName);
 
   let counter = 0;
   while (counter < gameCounter) {
-    const number = generateNumber();
+    const number = generateTool(min, max);
     const question = askQuestion(number, gameName);
     const answer = setAnswer();
+    const correctAnswer = getCorrectAnswer(number);
 
     if (checkAnswer(answer, number)) {
       correctResultMessage();
       counter += 1;
     } else {
-      return negativeAnswerToUser(answer, userName, number, question);
+      return incorrectResultMessage(correctAnswer, answer, userName, question);
     }
   }
 

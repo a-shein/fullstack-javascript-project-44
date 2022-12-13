@@ -1,11 +1,11 @@
 import {
   correctResultMessage,
-  generateNumber,
   greetings,
   setAnswer,
   setCondition,
   incorrectResultMessage,
   congratulationToUser,
+  generateTool,
   gameCounter,
 } from '../index.js';
 
@@ -27,28 +27,26 @@ function checkAnswer(answer, number, secondNumber) {
   return Number(answer) === result;
 }
 
-function negativeAnswerToUser(answer, userName, number, secondNumber, question) {
-  const correctAnswer = getNod(number, secondNumber);
-  incorrectResultMessage(correctAnswer, answer, userName, question);
-}
-
 function selectNodGame() {
   const gameName = 'brain-nod';
+  const minNumber = 1;
+  const maxNumber = 20;
   const userName = greetings();
   setCondition(gameName);
 
   let counter = 0;
   while (counter < gameCounter) {
-    const number = generateNumber();
-    const secondNumber = generateNumber();
+    const number = generateTool(minNumber, maxNumber);
+    const secondNumber = generateTool(minNumber, maxNumber);
     const question = askQuestion(number, secondNumber);
     const answer = setAnswer();
+    const correctAnswer = getNod(number, secondNumber);
 
     if (checkAnswer(answer, number, secondNumber)) {
       correctResultMessage();
       counter += 1;
     } else {
-      return negativeAnswerToUser(answer, userName, number, secondNumber, question);
+      return incorrectResultMessage(correctAnswer, answer, userName, question);
     }
   }
 
