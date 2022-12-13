@@ -6,7 +6,7 @@ import {
   setAnswer,
   setCondition,
   congratulationToUser,
-  gameCounter,
+  gameCounter
 } from '../index.js';
 
 function askQuestion(number) {

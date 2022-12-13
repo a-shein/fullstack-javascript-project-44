@@ -6,7 +6,7 @@ import {
   incorrectResultMessage,
   setAnswer,
   setCondition,
-  gameCounter,
+  gameCounter
 } from '../index.js';
 
 function generateOperator() {
