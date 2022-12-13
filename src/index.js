@@ -52,5 +52,5 @@ export {
   correctResultMessage,
   incorrectResultMessage,
   congratulationToUser,
-  gameCounter
+  gameCounter,
 };

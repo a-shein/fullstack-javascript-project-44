@@ -6,7 +6,7 @@ import {
   setAnswer,
   setCondition,
   congratulationToUser,
-  gameCounter
+  gameCounter,
 } from '../index.js';
 
 function askQuestion(number) {
@@ -49,13 +49,11 @@ function selectEvenNumberGame() {
 
   let counter = 0;
   while (counter < gameCounter) {
-    let result = null;
     const number = generateNumber();
     const question = askQuestion(number, gameName);
     const answer = setAnswer();
-    result = checkAnswer(answer, number);
 
-    if (result) {
+    if (checkAnswer(answer, number)) {
       correctResultMessage();
       counter += 1;
     } else {

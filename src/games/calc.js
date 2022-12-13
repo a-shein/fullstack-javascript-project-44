@@ -6,7 +6,7 @@ import {
   incorrectResultMessage,
   setAnswer,
   setCondition,
-  gameCounter
+  gameCounter,
 } from '../index.js';
 
 function generateOperator() {
@@ -58,15 +58,13 @@ function selectRightResultOfExpressionGame() {
 
   let counter = 0;
   while (counter < gameCounter) {
-    let result = null;
     const number = generateNumber();
     const secondNumber = generateNumber();
     const operator = generateOperator();
     const question = askQuestion(number, secondNumber, operator);
     const answer = setAnswer();
-    result = checkAnswer(answer, number, secondNumber, operator);
 
-    if (result) {
+    if (checkAnswer(answer, number, secondNumber, operator)) {
       correctResultMessage();
       counter += 1;
     } else {

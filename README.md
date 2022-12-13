@@ -9,4 +9,6 @@ make install
 - ascinema record 1 game https://asciinema.org/a/93kIGa7WYiO0zenTidaTmJO1U
 
 - ascinema record 2 game https://asciinema.org/a/npEX3KzkF2rvk6vpXPyYKcjNn
+
+- ascinema record 3 game https://asciinema.org/a/7HYSVjWAhui96LRoajuo64a2Q
 ```
