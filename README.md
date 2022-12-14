@@ -4,15 +4,31 @@
 
 #setup
 ```sh
-make install
+Склонируйте данный репозиторий: git clone git@github.com:a-shein/fullstack-javascript-project-44.git
+
+Последовательно выполните:
+1. make install
+2. sudo npm link
 ```
 
-- asciinema record 1 game https://asciinema.org/a/93kIGa7WYiO0zenTidaTmJO1U
+##play games
+```sh
+запуск игры "Четное ли число": brain-even
+запуск игры "Калькулятор": brain-calc
+запуск игры "Наибольший общий делитель": brain-gcd
+запуск игры "Прогрессия": brain-progression
+запуск игры "Простое ли число": brain-prime
+```
 
-- asciinema record 2 game https://asciinema.org/a/npEX3KzkF2rvk6vpXPyYKcjNn
+###games example
+```sh
+пример игры "Четное ли число" - asciinema record 1 game https://asciinema.org/a/93kIGa7WYiO0zenTidaTmJO1U
 
-- asciinema record 3 game https://asciinema.org/a/7HYSVjWAhui96LRoajuo64a2Q
+пример игры "Калькулятор" - asciinema record 2 game https://asciinema.org/a/npEX3KzkF2rvk6vpXPyYKcjNn
 
-- asciinema record 4 game https://asciinema.org/a/1QnvQ0jFyfbbXU8CxNozTeG4f
+пример игры "Наибольший общий делитель" - asciinema record 3 game https://asciinema.org/a/7HYSVjWAhui96LRoajuo64a2Q
 
-- asciinema record 5 game https://asciinema.org/a/yxOY4A9deX1gvW7brEUWUvafT
+пример игры "Прогрессия" - asciinema record 4 game https://asciinema.org/a/1QnvQ0jFyfbbXU8CxNozTeG4f
+
+пример игры "Простое ли число" - asciinema record 5 game https://asciinema.org/a/yxOY4A9deX1gvW7brEUWUvafT
+```
