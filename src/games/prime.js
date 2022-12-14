@@ -16,10 +16,14 @@ function askQuestion(number) {
 }
 
 function isPrimeNumber(number) {
-  for (let i = 2; i < number; i + 1) {
+  let i = 2;
+
+  while (i < number) {
     if (number % i === 0) {
       return true;
     }
+
+    i += 1;
   }
   return false;
 }
