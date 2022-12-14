@@ -5,6 +5,7 @@
 #setup
 ```sh
 make install
+```
 
 - asciinema record 1 game https://asciinema.org/a/93kIGa7WYiO0zenTidaTmJO1U
 
@@ -13,4 +14,5 @@ make install
 - asciinema record 3 game https://asciinema.org/a/7HYSVjWAhui96LRoajuo64a2Q
 
 - asciinema record 4 game https://asciinema.org/a/1QnvQ0jFyfbbXU8CxNozTeG4f
-```
+
+- asciinema record 5 game https://asciinema.org/a/yxOY4A9deX1gvW7brEUWUvafT

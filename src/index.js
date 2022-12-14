@@ -22,6 +22,9 @@ function setCondition(gameName) {
     case 'brain-progression':
       console.log('What number is missing in the progression?');
       break;
+    case 'brain-prime':
+      console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+      break;
     default:
   }
 }

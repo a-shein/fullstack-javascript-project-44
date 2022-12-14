@@ -1,11 +1,11 @@
 import {
+  congratulationToUser,
   correctResultMessage,
+  generateTool,
   greetings,
   incorrectResultMessage,
   setAnswer,
   setCondition,
-  congratulationToUser,
-  generateTool,
   gameCounter,
 } from '../index.js';
 
@@ -15,35 +15,33 @@ function askQuestion(number) {
   return question;
 }
 
-function isParityNumber(number) {
-  return number % 2 === 0;
+function isPrimeNumber(number) {
+  for (let i = 2; i < number; i + 1) {
+    if (number % i === 0) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function checkAnswer(answer, number) {
-  return (answer === 'yes' && isParityNumber(number))
-        || (answer === 'no' && !isParityNumber(number));
+  return (answer === 'no' && isPrimeNumber(number))
+        || (answer === 'yes' && !isPrimeNumber(number));
 }
 
-function getCorrectAnswer(number) {
-  if (isParityNumber(number)) {
-    return 'yes';
-  }
-  return 'no';
-}
-
-function selectEvenNumberGame() {
-  const gameName = 'brain-even';
-  const min = 1;
-  const max = 20;
+function primeGame() {
+  const gameName = 'brain-prime';
+  const minNumber = 2;
+  const maxNumber = 20;
   const userName = greetings();
   setCondition(gameName);
 
   let counter = 0;
   while (counter < gameCounter) {
-    const number = generateTool(min, max);
-    const question = askQuestion(number, gameName);
+    const number = generateTool(minNumber, maxNumber);
+    const question = askQuestion(number);
     const answer = setAnswer();
-    const correctAnswer = getCorrectAnswer(number);
+    const correctAnswer = isPrimeNumber(number) ? 'no' : 'yes';
 
     if (checkAnswer(answer, number)) {
       correctResultMessage();
@@ -56,4 +54,4 @@ function selectEvenNumberGame() {
   return congratulationToUser(userName);
 }
 
-export default selectEvenNumberGame;
+export default primeGame;
