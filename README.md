@@ -2,7 +2,7 @@
 [![Actions Status](https://github.com/a-shein/fullstack-javascript-project-44/workflows/hexlet-check/badge.svg)](https://github.com/a-shein/fullstack-javascript-project-44/actions)
 <a href="https://codeclimate.com/github/a-shein/fullstack-javascript-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/0075c5cd564e1c363f66/maintainability" /></a>
 
-#setup
+# setup
 ```sh
 Склонируйте данный репозиторий: git clone git@github.com:a-shein/fullstack-javascript-project-44.git
 
@@ -11,16 +11,20 @@
 2. sudo npm link
 ```
 
-##play games
+## play games
 ```sh
 запуск игры "Четное ли число": brain-even
+
 запуск игры "Калькулятор": brain-calc
+
 запуск игры "Наибольший общий делитель": brain-gcd
+
 запуск игры "Прогрессия": brain-progression
+
 запуск игры "Простое ли число": brain-prime
 ```
 
-###games example
+### games example
 ```sh
 пример игры "Четное ли число" - asciinema record 1 game https://asciinema.org/a/93kIGa7WYiO0zenTidaTmJO1U
 
