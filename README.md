@@ -4,9 +4,9 @@
 
 # setup
 ```sh
-Склонируйте данный репозиторий: git clone git@github.com:a-shein/fullstack-javascript-project-44.git
+Сlone the repository with the command: git clone git@github.com:a-shein/fullstack-javascript-project-44.git
 
-Последовательно выполните:
+Run the commands one by one:
 1. make install
 2. sudo npm link
 ```
@@ -26,7 +26,7 @@
 
 ### games example
 ```sh
-пример игры "Четное ли число" - asciinema record 1 game https://asciinema.org/a/93kIGa7WYiO0zenTidaTmJO1U
+пример игры "Четное ли число" - [![asciicast](https://asciinema.org/a/93kIGa7WYiO0zenTidaTmJO1U.svg)](https://asciinema.org/a/93kIGa7WYiO0zenTidaTmJO1U)
 
 пример игры "Калькулятор" - asciinema record 2 game https://asciinema.org/a/npEX3KzkF2rvk6vpXPyYKcjNn
 
