@@ -2,6 +2,8 @@
 [![Actions Status](https://github.com/a-shein/fullstack-javascript-project-44/workflows/hexlet-check/badge.svg)](https://github.com/a-shein/fullstack-javascript-project-44/actions)
 <a href="https://codeclimate.com/github/a-shein/fullstack-javascript-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/0075c5cd564e1c363f66/maintainability" /></a>
 
+Welcome to Hexlet educational project "Brain Games"! This project includes 5 math games. Follow the setup-instructions and have fun.
+
 # setup
 ```sh
 Сlone the repository with the command: git clone git@github.com:a-shein/fullstack-javascript-project-44.git

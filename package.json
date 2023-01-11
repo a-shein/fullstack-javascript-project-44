@@ -2,8 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "hexlet study project",
-  "main": "index.js",
+  "description": "Hexlet educational project that includes 5 math games",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
