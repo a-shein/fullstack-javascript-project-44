@@ -13,26 +13,41 @@ Run the commands one by one:
 
 ## play games
 ```sh
-запуск игры "Четное ли число": brain-even
+start game "brain-even": brain-even
 
-запуск игры "Калькулятор": brain-calc
+start game "brain-calc": brain-calc
 
-запуск игры "Наибольший общий делитель": brain-gcd
+start game "brain-gcd": brain-gcd 
 
-запуск игры "Прогрессия": brain-progression
+start game "brain-progression": brain-progression
 
-запуск игры "Простое ли число": brain-prime
+start game "brain-prime": brain-prime
 ```
 
 ### games example
-```sh
-пример игры "Четное ли число" - [![asciicast](https://asciinema.org/a/93kIGa7WYiO0zenTidaTmJO1U.svg)](https://asciinema.org/a/93kIGa7WYiO0zenTidaTmJO1U)
 
-пример игры "Калькулятор" - asciinema record 2 game https://asciinema.org/a/npEX3KzkF2rvk6vpXPyYKcjNn
-
-пример игры "Наибольший общий делитель" - asciinema record 3 game https://asciinema.org/a/7HYSVjWAhui96LRoajuo64a2Q
-
-пример игры "Прогрессия" - asciinema record 4 game https://asciinema.org/a/1QnvQ0jFyfbbXU8CxNozTeG4f
-
-пример игры "Простое ли число" - asciinema record 5 game https://asciinema.org/a/yxOY4A9deX1gvW7brEUWUvafT
+```shell
+example of "brain-even"
 ```
+[![asciicast](https://asciinema.org/a/93kIGa7WYiO0zenTidaTmJO1U.svg)](https://asciinema.org/a/93kIGa7WYiO0zenTidaTmJO1U?t=1:03)
+
+```shell
+example of "brain-calc"
+```
+[![asciicast](https://asciinema.org/a/npEX3KzkF2rvk6vpXPyYKcjNn.svg)](https://asciinema.org/a/npEX3KzkF2rvk6vpXPyYKcjNn?t=57)
+
+```shell
+example of "brain-gcd"
+```
+[![asciicast](https://asciinema.org/a/7HYSVjWAhui96LRoajuo64a2Q.svg)](https://asciinema.org/a/7HYSVjWAhui96LRoajuo64a2Q)
+
+```shell
+example of "brain-progression"
+```
+[![asciicast](https://asciinema.org/a/1QnvQ0jFyfbbXU8CxNozTeG4f.svg)](https://asciinema.org/a/1QnvQ0jFyfbbXU8CxNozTeG4f)
+
+
+```sh
+example of "brain-prime"
+```
+[![asciicast](https://asciinema.org/a/yxOY4A9deX1gvW7brEUWUvafT.svg)](https://asciinema.org/a/yxOY4A9deX1gvW7brEUWUvafT)
