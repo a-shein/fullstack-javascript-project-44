@@ -16,21 +16,25 @@ function askQuestion(number) {
 }
 
 function isPrimeNumber(number) {
+  if (number < 2) {
+    return false;
+  }
+
   let i = 2;
 
   while (i < number) {
     if (number % i === 0) {
-      return true;
+      return false;
     }
 
     i += 1;
   }
-  return false;
+  return true;
 }
 
 function checkAnswer(answer, number) {
-  return (answer === 'no' && isPrimeNumber(number))
-        || (answer === 'yes' && !isPrimeNumber(number));
+  return (answer === 'no' && !isPrimeNumber(number))
+        || (answer === 'yes' && isPrimeNumber(number));
 }
 
 function primeGame() {
