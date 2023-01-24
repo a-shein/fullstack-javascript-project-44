@@ -49,7 +49,7 @@ function primeGame() {
     const number = generateTool(minNumber, maxNumber);
     const question = askQuestion(number);
     const answer = setAnswer();
-    const correctAnswer = isPrimeNumber(number) ? 'no' : 'yes';
+    const correctAnswer = isPrimeNumber(number) ? 'yes' : 'no';
 
     if (checkAnswer(answer, number)) {
       correctResultMessage();
