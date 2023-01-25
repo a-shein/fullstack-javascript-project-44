@@ -1,14 +1,5 @@
-import {
-  congratulationToUser,
-  correctResultMessage,
-  greetings,
-  incorrectResultMessage,
-  setAnswer,
-  setCondition,
-  gameCounter,
-} from '../index.js';
-
-import getRandomInRange from '../getRandomInRange.js';
+import { getRandomInRange } from '../utils.js';
+import gameEngine from '../game-process.js';
 
 function generateOperator() {
   const operators = ['+', '-', '*'];
@@ -17,9 +8,7 @@ function generateOperator() {
 }
 
 function askQuestion(number, secondNumber, operator) {
-  const question = `Question: ${number} ${operator} ${secondNumber}`;
-  console.log(question);
-  return question;
+  return `Question: ${number} ${operator} ${secondNumber}`;
 }
 
 function calculate(number, secondNumber, operator) {
@@ -41,37 +30,18 @@ function calculate(number, secondNumber, operator) {
   return result;
 }
 
-function checkAnswer(answer, number, secondNumber, operator) {
-  const result = calculate(number, secondNumber, operator);
-
-  return Number(answer) === result;
-}
-
-function selectRightResultOfExpressionGame() {
-  const gameName = 'brain-calc';
+function calcGameRoundGenerator() {
   const minNumber = 1;
   const maxNumber = 20;
-  const userName = greetings();
-  setCondition(gameName);
+  const number = getRandomInRange(minNumber, maxNumber);
+  const secondNumber = getRandomInRange(minNumber, maxNumber);
+  const operator = generateOperator();
+  const question = askQuestion(number, secondNumber, operator);
+  const correctAnswer = String(calculate(number, secondNumber, operator));
 
-  let counter = 0;
-  while (counter < gameCounter) {
-    const number = getRandomInRange(minNumber, maxNumber);
-    const secondNumber = getRandomInRange(minNumber, maxNumber);
-    const operator = generateOperator();
-    const question = askQuestion(number, secondNumber, operator);
-    const answer = setAnswer();
-    const correctAnswer = calculate(number, secondNumber, operator);
-
-    if (checkAnswer(answer, number, secondNumber, operator)) {
-      correctResultMessage();
-      counter += 1;
-    } else {
-      return incorrectResultMessage(correctAnswer, answer, userName, question);
-    }
-  }
-
-  return congratulationToUser(userName);
+  return [question, correctAnswer];
 }
+const condition = 'What is the result of the expression?';
+gameEngine(condition, calcGameRoundGenerator);
 
-export default selectRightResultOfExpressionGame;
+export default calcGameRoundGenerator;

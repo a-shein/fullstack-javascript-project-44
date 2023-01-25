@@ -1,19 +1,8 @@
-import {
-  congratulationToUser,
-  correctResultMessage,
-  greetings,
-  incorrectResultMessage,
-  setAnswer,
-  setCondition,
-  gameCounter,
-} from '../index.js';
+import { getRandomInRange } from '../utils.js';
+import gameEngine from '../game-process.js';
 
-import getRandomInRange from '../getRandomInRange.js';
-
-function askQuestion(number) {
-  const question = `Question: ${number}`;
-  console.log(question);
-  return question;
+function askSimpleQuestion(number) {
+  return `Question: ${number}`;
 }
 
 function isPrimeNumber(number) {
@@ -33,34 +22,17 @@ function isPrimeNumber(number) {
   return true;
 }
 
-function checkAnswer(answer, number) {
-  return (answer === 'no' && !isPrimeNumber(number))
-        || (answer === 'yes' && isPrimeNumber(number));
-}
-
-function primeGame() {
-  const gameName = 'brain-prime';
+function primeGameRoundGenerator() {
   const minNumber = 2;
   const maxNumber = 20;
-  const userName = greetings();
-  setCondition(gameName);
+  const number = getRandomInRange(minNumber, maxNumber);
+  const question = askSimpleQuestion(number);
+  const correctAnswer = isPrimeNumber(number) ? 'yes' : 'no';
 
-  let counter = 0;
-  while (counter < gameCounter) {
-    const number = getRandomInRange(minNumber, maxNumber);
-    const question = askQuestion(number);
-    const answer = setAnswer();
-    const correctAnswer = isPrimeNumber(number) ? 'yes' : 'no';
-
-    if (checkAnswer(answer, number)) {
-      correctResultMessage();
-      counter += 1;
-    } else {
-      return incorrectResultMessage(correctAnswer, answer, userName, question);
-    }
-  }
-
-  return congratulationToUser(userName);
+  return [question, correctAnswer];
 }
 
-export default primeGame;
+const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+gameEngine(condition, primeGameRoundGenerator);
+
+export default primeGameRoundGenerator;

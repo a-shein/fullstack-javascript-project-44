@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import selectRightResultOfExpressionGame from '../src/games/calc.js';
+import calcGameRoundGenerator from '../src/games/calc.js';
 
-selectRightResultOfExpressionGame();
+calcGameRoundGenerator();
