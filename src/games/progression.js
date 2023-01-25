@@ -5,9 +5,10 @@ import {
   setCondition,
   incorrectResultMessage,
   congratulationToUser,
-  generateTool,
   gameCounter,
 } from '../index.js';
+
+import getRandomInRange from '../getRandomInRange.js';
 
 function generator(lengthOfProgression, firstElementOfProgression, stepOfProgression) {
   const progressionArray = [firstElementOfProgression];
@@ -23,21 +24,21 @@ function generator(lengthOfProgression, firstElementOfProgression, stepOfProgres
 function generateProgression() {
   const minLength = 5;
   const maxLength = 10;
-  const lengthOfProgression = generateTool(minLength, maxLength);
+  const lengthOfProgression = getRandomInRange(minLength, maxLength);
 
   const minStep = 1;
   const maxStep = 10;
-  const stepOfProgression = generateTool(minStep, maxStep);
+  const stepOfProgression = getRandomInRange(minStep, maxStep);
 
   const minNubmer = 1;
   const maxNumber = 20;
-  const firstElementOfProgression = generateTool(minNubmer, maxNumber);
+  const firstElementOfProgression = getRandomInRange(minNubmer, maxNumber);
 
   return generator(lengthOfProgression, firstElementOfProgression, stepOfProgression);
 }
 
 function generateSecretIndex(progressionArray) {
-  return generateTool(0, progressionArray.length - 1);
+  return getRandomInRange(0, progressionArray.length - 1);
 }
 
 function generateStringWithSecretElement(progressionArray, secretIndex) {

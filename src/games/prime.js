@@ -1,13 +1,14 @@
 import {
   congratulationToUser,
   correctResultMessage,
-  generateTool,
   greetings,
   incorrectResultMessage,
   setAnswer,
   setCondition,
   gameCounter,
 } from '../index.js';
+
+import getRandomInRange from '../getRandomInRange.js';
 
 function askQuestion(number) {
   const question = `Question: ${number}`;
@@ -46,7 +47,7 @@ function primeGame() {
 
   let counter = 0;
   while (counter < gameCounter) {
-    const number = generateTool(minNumber, maxNumber);
+    const number = getRandomInRange(minNumber, maxNumber);
     const question = askQuestion(number);
     const answer = setAnswer();
     const correctAnswer = isPrimeNumber(number) ? 'yes' : 'no';

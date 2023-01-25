@@ -49,10 +49,6 @@ function incorrectResultMessage(correctAnswer, answer, userName, question) {
   );
 }
 
-function generateTool(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 const gameCounter = 3;
 
 export {
@@ -62,6 +58,5 @@ export {
   correctResultMessage,
   incorrectResultMessage,
   congratulationToUser,
-  generateTool,
   gameCounter,
 };

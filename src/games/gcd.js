@@ -5,9 +5,10 @@ import {
   setCondition,
   incorrectResultMessage,
   congratulationToUser,
-  generateTool,
   gameCounter,
 } from '../index.js';
+
+import getRandomInRange from '../getRandomInRange.js';
 
 function askQuestion(number, secondNumber) {
   const question = `Question: ${number} ${secondNumber}`;
@@ -36,8 +37,8 @@ function selectNodGame() {
 
   let counter = 0;
   while (counter < gameCounter) {
-    const number = generateTool(minNumber, maxNumber);
-    const secondNumber = generateTool(minNumber, maxNumber);
+    const number = getRandomInRange(minNumber, maxNumber);
+    const secondNumber = getRandomInRange(minNumber, maxNumber);
     const question = askQuestion(number, secondNumber);
     const answer = setAnswer();
     const correctAnswer = getNod(number, secondNumber);

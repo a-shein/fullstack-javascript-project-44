@@ -5,9 +5,10 @@ import {
   setAnswer,
   setCondition,
   congratulationToUser,
-  generateTool,
   gameCounter,
 } from '../index.js';
+
+import getRandomInRange from '../getRandomInRange.js';
 
 function askQuestion(number) {
   const question = `Question: ${number}`;
@@ -40,7 +41,7 @@ function selectEvenNumberGame() {
 
   let counter = 0;
   while (counter < gameCounter) {
-    const number = generateTool(min, max);
+    const number = getRandomInRange(min, max);
     const question = askQuestion(number, gameName);
     const answer = setAnswer();
     const correctAnswer = getCorrectAnswer(number);

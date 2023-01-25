@@ -5,9 +5,10 @@ import {
   incorrectResultMessage,
   setAnswer,
   setCondition,
-  generateTool,
   gameCounter,
 } from '../index.js';
+
+import getRandomInRange from '../getRandomInRange.js';
 
 function generateOperator() {
   const operators = ['+', '-', '*'];
@@ -55,8 +56,8 @@ function selectRightResultOfExpressionGame() {
 
   let counter = 0;
   while (counter < gameCounter) {
-    const number = generateTool(minNumber, maxNumber);
-    const secondNumber = generateTool(minNumber, maxNumber);
+    const number = getRandomInRange(minNumber, maxNumber);
+    const secondNumber = getRandomInRange(minNumber, maxNumber);
     const operator = generateOperator();
     const question = askQuestion(number, secondNumber, operator);
     const answer = setAnswer();
