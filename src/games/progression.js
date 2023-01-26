@@ -1,17 +1,6 @@
 import { getRandomInRange, askSimpleQuestion } from '../utils.js';
 import gameEngine from '../game-process.js';
 
-function generator(lengthOfProgression, firstElementOfProgression, stepOfProgression) {
-  const progressionArray = [firstElementOfProgression];
-
-  while (progressionArray.length < lengthOfProgression) {
-    const newElement = progressionArray[progressionArray.length - 1] + stepOfProgression;
-    progressionArray.push(newElement);
-  }
-
-  return progressionArray;
-}
-
 function generateProgression() {
   const minLength = 5;
   const maxLength = 10;
@@ -25,7 +14,13 @@ function generateProgression() {
   const maxNumber = 20;
   const firstElementOfProgression = getRandomInRange(minNumber, maxNumber);
 
-  return generator(lengthOfProgression, firstElementOfProgression, stepOfProgression);
+  const progressionArray = [firstElementOfProgression];
+  while (progressionArray.length < lengthOfProgression) {
+    const newElement = progressionArray[progressionArray.length - 1] + stepOfProgression;
+    progressionArray.push(newElement);
+  }
+
+  return progressionArray;
 }
 
 function generateSecretIndex(progressionArray) {
