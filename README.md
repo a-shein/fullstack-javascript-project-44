@@ -15,15 +15,15 @@ Run the commands one by one:
 
 ## play games
 ```sh
-start game "brain-even": brain-even
+start game "brain-even": make even
 
-start game "brain-calc": brain-calc
+start game "brain-calc": make calc
 
-start game "brain-gcd": brain-gcd 
+start game "brain-gcd": make gcd 
 
-start game "brain-progression": brain-progression
+start game "brain-progression": make progression
 
-start game "brain-prime": brain-prime
+start game "brain-prime": make prime
 ```
 
 ### games example
