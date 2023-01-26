@@ -1,4 +1,4 @@
-import { getRandomInRange } from '../utils.js';
+import { getRandomInRange, askSimpleQuestion } from '../utils.js';
 import gameEngine from '../game-process.js';
 
 function generator(lengthOfProgression, firstElementOfProgression, stepOfProgression) {
@@ -37,10 +37,6 @@ function generateStringWithSecretElement(progressionArray, secretIndex) {
   progressionArrayCopy[secretIndex] = '..';
 
   return progressionArrayCopy.join(' ');
-}
-
-function askSimpleQuestion(progression) {
-  return `Question: ${progression}`;
 }
 
 function getCorrectElement(progression, secretIndex) {

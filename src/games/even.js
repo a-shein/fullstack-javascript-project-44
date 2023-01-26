@@ -1,9 +1,5 @@
-import { getRandomInRange } from '../utils.js';
+import { getRandomInRange, askSimpleQuestion } from '../utils.js';
 import gameEngine from '../game-process.js';
-
-function askSimpleQuestion(number) {
-  return `Question: ${number}`;
-}
 
 function isParityNumber(number) {
   return number % 2 === 0;

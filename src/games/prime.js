@@ -1,9 +1,5 @@
-import { getRandomInRange } from '../utils.js';
+import { getRandomInRange, askSimpleQuestion } from '../utils.js';
 import gameEngine from '../game-process.js';
-
-function askSimpleQuestion(number) {
-  return `Question: ${number}`;
-}
 
 function isPrimeNumber(number) {
   if (number < 2) {
